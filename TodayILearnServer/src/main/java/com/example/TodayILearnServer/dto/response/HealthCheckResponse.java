@@ -1,4 +1,4 @@
-package com.example.TodayILearnServer.dto.common;
+package com.example.TodayILearnServer.dto.response;
 
 import lombok.Data;
 
