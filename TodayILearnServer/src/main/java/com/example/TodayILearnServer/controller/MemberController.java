@@ -50,4 +50,10 @@ public class MemberController {
         memberService.deleteMember(memberId);
         return ResponseEntity.noContent().build();
     }
+
+    // 사용자 목록 조회
+    @GetMapping
+    public ResponseEntity<List<MemberGetResponse>> getMembersProfile() {
+        return ResponseEntity.ok(memberService.getMembers());
+    }
 }
