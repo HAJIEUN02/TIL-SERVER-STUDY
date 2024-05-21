@@ -36,4 +36,11 @@ public class MemberController {
         URI location =  URI.create(memberService.create(request));
         return ResponseEntity.created(location).build();
     }
+
+    // 특정 사용자 sopt info 수정
+    @PatchMapping("/{memberId}")
+    public ResponseEntity<Void> updateMemberSoptInfo(@PathVariable Long memberId, @RequestBody MemberProfileUpdateRequest request) {
+        memberService.updateSOPT(memberId, request);
+        return ResponseEntity.noContent().build();
+    }
 }

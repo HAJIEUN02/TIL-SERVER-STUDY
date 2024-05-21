@@ -71,4 +71,10 @@ public class MemberService {
                 .build());
         return member.getId().toString();
     }
+
+    @Transactional
+    public void updateSOPT(Long memberId, MemberProfileUpdateRequest request) {
+        Member member = memberJpaRepository.findByIdOrThrow(memberId);
+        member.updateSOPT(new SOPT(request.getGeneration(), request.getPart()));
+    }
 }
