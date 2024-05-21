@@ -43,4 +43,11 @@ public class MemberController {
         memberService.updateSOPT(memberId, request);
         return ResponseEntity.noContent().build();
     }
+
+    // 특정 사용자 삭제
+    @DeleteMapping("/{memberId}")
+    public ResponseEntity deleteMember(@PathVariable Long memberId) {
+        memberService.deleteMember(memberId);
+        return ResponseEntity.noContent().build();
+    }
 }

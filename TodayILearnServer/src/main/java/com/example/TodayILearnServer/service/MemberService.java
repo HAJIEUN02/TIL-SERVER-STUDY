@@ -72,9 +72,17 @@ public class MemberService {
         return member.getId().toString();
     }
 
+    // 사용자 Sopt Info 업데이트 API
     @Transactional
     public void updateSOPT(Long memberId, MemberProfileUpdateRequest request) {
         Member member = memberJpaRepository.findByIdOrThrow(memberId);
         member.updateSOPT(new SOPT(request.getGeneration(), request.getPart()));
+    }
+
+    // 특정 사용자 삭제 API
+    @Transactional
+    public void deleteMember(Long memberId) {
+        Member member = memberJpaRepository.findByIdOrThrow(memberId);
+        memberJpaRepository.delete(member);
     }
 }
