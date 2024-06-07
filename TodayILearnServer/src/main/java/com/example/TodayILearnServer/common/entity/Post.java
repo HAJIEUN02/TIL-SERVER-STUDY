@@ -17,7 +17,7 @@ public class Post { // 게시글 Entity
     private Long postId;
 
     private String title;
-    @Column(columnDefinition = "TEXT")
+    @Column(columnDefinition = "TEXT") // DB에 어떻게 데이터가 들어갈지 표현 및 확인
     private String content;
 
     // Many-to-One(다대일 관계) : 게시글 - 사용자
